@@ -1,4 +1,5 @@
-﻿using CompanyEmployee.Entities.Models;
+﻿using CompanyEmployee.Entities.Configuration;
+using CompanyEmployee.Entities.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,12 @@ namespace CompanyEmployee.Entities
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CompanyConfiguration());
+            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+
+        }
         public DbSet<Company> Companies { get; set; }
         public DbSet<Employee> Employees { get; set; }
     }
