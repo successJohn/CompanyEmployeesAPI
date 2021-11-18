@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyEmployee.API", "Comp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyEmployee.Entities", "CompanyEmployee.Entities\CompanyEmployee.Entities.csproj", "{1CCC2BAB-F070-44C0-B8B7-57ACAEBD9D58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyEmployee.Repository", "CompanyEmployee.Repository\CompanyEmployee.Repository.csproj", "{DA5F410C-1944-4890-AED0-91828137A73E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1CCC2BAB-F070-44C0-B8B7-57ACAEBD9D58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CCC2BAB-F070-44C0-B8B7-57ACAEBD9D58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CCC2BAB-F070-44C0-B8B7-57ACAEBD9D58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA5F410C-1944-4890-AED0-91828137A73E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5F410C-1944-4890-AED0-91828137A73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5F410C-1944-4890-AED0-91828137A73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5F410C-1944-4890-AED0-91828137A73E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
