@@ -26,15 +26,30 @@ namespace CompanyEmployee.API.Controllers
         [HttpGet]
         public IActionResult GetCompanies()
         {
-            try
-            {
+          
                 var companies = _unitOfWork.Company.GetAllCompanies();
                 var companiesDto = _mapper.Map<IEnumerable<CompanyDTO>>(companies);
                 return Ok(companiesDto);
-            }catch(Exception ex)
+           
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetCompany(Guid id)
+        {
+            var company = _unitOfWork.Company.GetCompany(id);
+
+            if(company == null)
             {
-                return StatusCode(500, "Internal Server Error");
+                return NotFound();
             }
+
+            else
+            {
+                var companyDto = _mapper.Map<CompanyDTO>(company);
+                return Ok(company);
+            }
+   
+            
         }
     }
 }

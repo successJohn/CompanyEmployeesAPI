@@ -10,7 +10,7 @@ namespace CompanyEmployee.Repository.Interfaces
     public interface IRepository<TEntity> where TEntity: class
     {
         IQueryable<TEntity> GetAll();
-        TEntity Get(int id);
+        TEntity Get(Guid id);
         Task<TEntity> GetAsync(object id);
         void Add(TEntity entity);
         void AddRange(IList<TEntity> entities);

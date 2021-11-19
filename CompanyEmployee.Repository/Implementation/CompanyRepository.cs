@@ -21,5 +21,10 @@ namespace CompanyEmployee.Repository.Implementation
         {
             return GetAll().OrderBy(C => C.Id).ToList();
         }
+
+        public Company GetCompany(Guid companyId)
+        {
+            return Get(companyId);
+        }
     }
 }

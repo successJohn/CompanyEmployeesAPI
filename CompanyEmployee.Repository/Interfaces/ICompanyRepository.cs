@@ -10,5 +10,7 @@ namespace CompanyEmployee.Repository.Interfaces
     public interface ICompanyRepository 
     {
         IEnumerable<Company> GetAllCompanies();
+
+        public Company GetCompany(Guid companyId);
     }
 }

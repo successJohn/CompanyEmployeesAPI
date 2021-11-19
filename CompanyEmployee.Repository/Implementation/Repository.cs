@@ -58,7 +58,7 @@ namespace CompanyEmployee.Repository.Implementation
             return _dbSet.Where(predicate);
         }
 
-        public TEntity Get(int id)
+        public TEntity Get(Guid id)
         {
             return _dbSet.Find(id);
         }
