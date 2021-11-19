@@ -30,6 +30,7 @@ namespace CompanyEmployee.API
             services.ConfigureCors();
             services.ConfigureIISIntegration();
             services.ConfigureSqlContext(Configuration);
+            services.ConfigureRepositories();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

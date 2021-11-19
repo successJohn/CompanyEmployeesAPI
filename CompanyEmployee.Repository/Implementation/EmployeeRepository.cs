@@ -12,8 +12,9 @@ namespace CompanyEmployee.Repository.Implementation
     public class EmployeeRepository: Repository<Employee>, IEmployeeRepository
     {
         public EmployeeRepository(RepositoryContext repositoryContext)
-                : base(repositoryContext)
+            :base(repositoryContext)
         {
+
         }
     }
 }

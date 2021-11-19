@@ -9,12 +9,17 @@ using System.Threading.Tasks;
 
 namespace CompanyEmployee.Repository.Implementation
 {
-    public class CompanyRepository : Repository<Company> , ICompanyRepository
+    public class CompanyRepository : Repository<Company>, ICompanyRepository
     {
         public CompanyRepository(RepositoryContext repositoryContext)
-            :base(repositoryContext)
+            : base(repositoryContext)
         {
 
+        }
+
+        public IEnumerable<Company> GetAllCompanies()
+        {
+            return GetAll().OrderBy(C => C.Id).ToList();
         }
     }
 }

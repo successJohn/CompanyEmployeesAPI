@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CompanyEmployee.Repository.Interfaces
+namespace CompanyEmployee.Services.Interfaces
 {
-    public interface ICompanyRepository 
+    public interface IEmployeeService
     {
-        IEnumerable<Company> GetAllCompanies();
+        IEnumerable<Employee> GetAllEmployees();
     }
 }
