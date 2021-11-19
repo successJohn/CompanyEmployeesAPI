@@ -24,6 +24,8 @@ namespace CompanyEmployee.Repository.Implementation
         public void Add(TEntity entity)
         {
             _dbSet.Add(entity);
+            //_repositoryContext.Set<TEntity>.Add(entity)
+            //_repositoryContext.Set<Company>.Add(entity)
         }
 
         public async Task AddAsync(TEntity entity)
@@ -64,6 +66,8 @@ namespace CompanyEmployee.Repository.Implementation
         public IQueryable<TEntity> GetAll()
         {
             return _dbSet.AsQueryable();
+
+            //return _repositoryContext.Set<Company>().AsQueryable();
         }
 
         public async Task<TEntity> GetAsync(object id)

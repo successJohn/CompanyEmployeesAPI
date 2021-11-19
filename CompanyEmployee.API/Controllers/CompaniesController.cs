@@ -1,4 +1,5 @@
-﻿using CompanyEmployee.Entities.DTO;
+﻿using AutoMapper;
+using CompanyEmployee.Entities.DTO;
 using CompanyEmployee.Repository.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,10 +15,12 @@ namespace CompanyEmployee.API.Controllers
     public class CompaniesController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public CompaniesController(IUnitOfWork unitOfWork)
+        public CompaniesController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -26,12 +29,7 @@ namespace CompanyEmployee.API.Controllers
             try
             {
                 var companies = _unitOfWork.Company.GetAllCompanies();
-                var companiesDto = companies.Select(c => new CompanyDTO
-                {
-                    Id = c.Id,
-                    Name = c.Name,
-                    FullAddress = string.Join(" ", c.Address, c.Country)
-                }).ToList();
+                var companiesDto = _mapper.Map<IEnumerable<CompanyDTO>>(companies);
                 return Ok(companiesDto);
             }catch(Exception ex)
             {

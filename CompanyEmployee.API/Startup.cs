@@ -31,6 +31,7 @@ namespace CompanyEmployee.API
             services.ConfigureIISIntegration();
             services.ConfigureSqlContext(Configuration);
             services.ConfigureRepositories();
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
