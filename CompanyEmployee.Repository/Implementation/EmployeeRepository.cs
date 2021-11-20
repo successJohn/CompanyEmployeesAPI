@@ -16,5 +16,10 @@ namespace CompanyEmployee.Repository.Implementation
         {
 
         }
+
+        public IEnumerable<Employee> GetEmployees(Guid companyId)
+        {
+            return Find(e => e.CompanyId.Equals(companyId)).OrderBy(e => e.Name);
+        }
     }
 }

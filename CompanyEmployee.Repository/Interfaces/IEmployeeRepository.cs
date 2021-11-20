@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompanyEmployee.Entities.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,8 @@ namespace CompanyEmployee.Repository.Interfaces
 {
    public interface IEmployeeRepository
     {
+        IEnumerable<Employee> GetEmployees(Guid companyId);
+
+
     }
 }
