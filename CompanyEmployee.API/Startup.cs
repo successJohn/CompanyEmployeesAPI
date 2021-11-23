@@ -32,7 +32,11 @@ namespace CompanyEmployee.API
             services.ConfigureSqlContext(Configuration);
             services.ConfigureRepositories();
             services.AddAutoMapper(typeof(Startup));
-            services.AddControllers();
+            services.AddControllers(config =>
+            {
+                config.RespectBrowserAcceptHeader = true;
+                config.ReturnHttpNotAcceptable = true;
+            }).AddXmlDataContractSerializerFormatters();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CompanyEmployee.API", Version = "v1" });
